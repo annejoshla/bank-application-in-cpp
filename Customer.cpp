@@ -37,9 +37,9 @@ void Customer::deposit(double amount) {
     if (amount > 0) {
         balance += amount;
         history.push_back({"Deposit", amount});
-        cout << "[Success] Deposited Rs. " << amount << ". New Balance: Rs. " << balance << "\n";
+        cout << string(5,'*') << "Successfully Deposited Rs. " << amount << ". New Balance: Rs. "<< balance << string(5,'*') << "\n";
     } else {
-        cout << "[Error] Invalid deposit amount!\n";
+        cout << string(5,'*') << "Invalid deposit amount!\n" << string(5,'*');
     }
 }
 
@@ -51,14 +51,14 @@ void Customer::withdraw(double amount) {
     } else {
         balance -= amount;
         history.push_back({"Withdrawal", amount});
-        cout << "[Success] Withdrew Rs. " << amount << ". New Balance: Rs. " << balance << "\n";
+        cout << "\n" << string(5,'*') << "Withdrawn Rs. " << amount << ". New Balance: Rs. " << balance << string(5,'*') << "\n";
     }
 }
 
 void Customer::viewTransactionHistory() {
     cout << "\n--- Transaction History for " << name << " ---\n";
     if (history.empty()) {
-        cout << "No transaction records found.\n";
+        cout << "\n" << string(5,'*') << "No transaction records found.\n" << string(5,'*');
         return;
     }
     cout << left << setw(20) << "Type" << " | " << "Amount (Rs.)" << "\n";
